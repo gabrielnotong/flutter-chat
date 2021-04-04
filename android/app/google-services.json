@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "336070780572",
+    "project_id": "flutter-chat-b35d0",
+    "storage_bucket": "flutter-chat-b35d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336070780572:android:1a126695ce740b3d222f59",
+        "android_client_info": {
+          "package_name": "com.notgabs.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336070780572-84n598smaqq2bomlp5latk49i0v6cdqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARlCxK0gvIbdTNFaVYrC6nT-BN_zoSZMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336070780572-84n598smaqq2bomlp5latk49i0v6cdqf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
