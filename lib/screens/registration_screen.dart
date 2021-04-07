@@ -3,6 +3,7 @@ import 'package:chat/constants.dart';
 import 'package:chat/screens/chat_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_awesome_alert_box/flutter_awesome_alert_box.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class RegistrationScreen extends StatefulWidget {
@@ -30,11 +31,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Hero(
-                tag: 'logo',
-                child: Container(
-                  height: 200.0,
-                  child: Image.asset('images/logo.png'),
+              Flexible(
+                child: Hero(
+                  tag: 'logo',
+                  child: Container(
+                    height: 200.0,
+                    child: Image.asset('images/logo.png'),
+                  ),
                 ),
               ),
               SizedBox(
@@ -89,7 +92,15 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       showSpinner = false;
                     });
                   } catch (e) {
-                    print(e);
+                    DangerAlertBox(
+                      context: context,
+                      title: 'ERROR',
+                      messageText: e.message,
+                      messageTextColor: Colors.red,
+                      buttonText: 'Close',
+                      buttonTextColor: Colors.white,
+                      buttonColor: Colors.red,
+                    );
                   }
                 },
                 color: Colors.blueAccent,
