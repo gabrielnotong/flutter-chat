@@ -3,6 +3,7 @@ import 'package:chat/screens/login_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ChatScreen extends StatefulWidget {
   static const String route = 'chat_screen';
@@ -90,6 +91,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     MessageBubble(
                       sender: message['sender'],
                       message: message['text'],
+                      createdAt: message['createdAt'],
                       isMe: loggedInUser.email == message['sender'],
                     ),
                   );
@@ -148,9 +150,10 @@ class _ChatScreenState extends State<ChatScreen> {
 class MessageBubble extends StatelessWidget {
   final String sender;
   final String message;
+  final Timestamp createdAt;
   final bool isMe;
 
-  MessageBubble({this.sender, this.message, this.isMe});
+  MessageBubble({this.sender, this.message, this.createdAt, this.isMe});
 
   @override
   Widget build(BuildContext context) {
@@ -190,6 +193,16 @@ class MessageBubble extends StatelessWidget {
                   fontSize: 15.0,
                 ),
               ),
+            ),
+          ),
+          Text(
+            DateFormat('yyyy/MM/dd H:mm:ss')
+                .format(createdAt.toDate())
+                .toString(),
+            style: TextStyle(
+              fontSize: 12.0,
+              color: Colors.black12,
+              fontStyle: FontStyle.italic,
             ),
           ),
         ],
